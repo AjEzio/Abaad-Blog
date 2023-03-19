@@ -12,8 +12,8 @@ from flask_gravatar import Gravatar
 from functools import wraps
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from dotenv import load_dotenv
-load_dotenv(dotenv_path="./env/Blog.env")
+# from dotenv import load_dotenv
+# load_dotenv(dotenv_path="./env/Blog.env")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
