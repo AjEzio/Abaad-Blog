@@ -149,7 +149,7 @@ def logout():
 def show_post(post_id):
     form = CommentForm()
     requested_post = BlogPost.query.get(post_id)
-    comments = db.session.query(Comment).all()
+    comments = db.session.query(Comment).filter_by(post_id=post_id).all()
     if form.validate_on_submit():
         if not current_user.is_authenticated:
             flash("You need to login or register to post comments")
